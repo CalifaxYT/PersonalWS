@@ -13,12 +13,13 @@ While one can do a lot with IPTables, there isn’t a way around actual hardware
 **NOTE:** We’ll only cover protection from TCP-based attacks. Most UDP-based attacks are amplified reflection attacks that will exhaust the network interface card of any common server. The only mitigation approach that makes sense against these types of attacks is to block them at the edge,core network or even the carrier. If such attacks are able to reach your server, there isn’t much you can do against those multi-Gbit/s attacks except to move to a DDoS protected network. 
 
 **The Best Linux Kernel Settings to Mitigate DDoS**
+
 A common mistake is that people do not use optimized kernel settings to better mitigate the effects of such attacks.
 Note that this guide focuses on CentOS 7 & Debian 9/10 as the operating systems of choice. CentOS 7 & Debian 9/10 include a recent version of IPTables and support of the new SYNPROXY target.
 
 We won’t cover every single kernel setting that you need to adjust in order to better mitigate DDoS with IPTables.
 
-Instead, we provide a set of CentOS 7 (they work for Debian 9 and 10 too) kernel settings that we would use. Just put the below in your /etc/sysctl.conf file and apply the settings with sysctl -p.
+Instead, we provide a set of CentOS 7 (they work for Debian 9 and 10 too) kernel settings that we would use. Just put the below in your ``/etc/sysctl.conf`` file and apply the settings with ``sysctl -p``.
 
 ```conf
 kernel.printk = 4 4 1 7 
@@ -97,6 +98,7 @@ net.ipv4.conf.all.rp_filter = 1
 These kernel tweaks help to maximize the performance of your server under DDoS and should somewhat increase the effectiveness of the IPTables rules that we’re going to provide in this guide.
 
 **The Actual IPTables Anti-DDoS Rules**
+
 DDoS attacks are complex. There are many different types of them and it’s close to impossible to maintain signature-based rules against all. But luckily there is something called connection tracking (nf_conntrack kernel module), which can help us to mitigate almost any TCP-based DDoS attack that doesn’t use SYN packets that seem legitimate - this includes all types of ACK, SYN-ACK and bogus TCP flag DDoS attacks.
 
 [CalifaxYT Discord](https://discord.gg/WufbYbv)
