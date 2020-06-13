@@ -12,6 +12,7 @@ While one can do a lot with IPTables, there isn’t a way around actual hardware
 
 **NOTE:** We’ll only cover protection from TCP-based attacks. Most UDP-based attacks are amplified reflection attacks that will exhaust the network interface card of any common server. The only mitigation approach that makes sense against these types of attacks is to block them at the edge,core network or even the carrier. If such attacks are able to reach your server, there isn’t much you can do against those multi-Gbit/s attacks except to move to a DDoS protected network. 
 
+
 **The Best Linux Kernel Settings to Mitigate DDoS**
 
 A common mistake is that people do not use optimized kernel settings to better mitigate the effects of such attacks.
@@ -96,6 +97,7 @@ net.ipv4.conf.all.accept_source_route = 0
 net.ipv4.conf.all.rp_filter = 1
 ```
 These kernel tweaks help to maximize the performance of your server under DDoS and should somewhat increase the effectiveness of the IPTables rules that we’re going to provide in this guide.
+
 
 **The Actual IPTables Anti-DDoS Rules**
 
