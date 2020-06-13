@@ -2,6 +2,8 @@
 layout: page
 sitemap:
   priority: 0.9
+pagination: 
+  enabled: true
 ---
 
 <ul class="list-posts">
@@ -13,7 +15,7 @@ sitemap:
             </a>
         </li>
     {% endfor %}
-{% if paginator.total_pages < 1 %}
+{% if paginator.total_pages >= 1 %}
 <ul>
   {% if paginator.previous_page %}
   <li>
