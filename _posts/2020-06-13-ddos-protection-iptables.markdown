@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "DDoS Protection With IPtables"
-subtitle: "The Ultimate Guide"
+subtitle: "The Ultimate IPtables Guide"
 date:   2020-06-13 13:33:37
 categories: [tweaks]
 ---
