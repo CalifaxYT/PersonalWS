@@ -98,27 +98,22 @@ net.ipv4.conf.all.rp_filter = 1
 ```
 These kernel tweaks help to maximize the performance of your server under DDoS and should somewhat increase the effectiveness of the IPTables rules that we’re going to provide in this guide.
 
-
 **The Actual IPTables Anti-DDoS Rules**
 
 DDoS attacks are complex. There are many different types of them and it’s close to impossible to maintain signature-based rules against all. But luckily there is something called connection tracking (nf_conntrack kernel module), which can help us to mitigate almost any TCP-based DDoS attack that doesn’t use SYN packets that seem legitimate - this includes all types of ACK, SYN-ACK and bogus TCP flag DDoS attacks. Anyways, here are the rules.
 
+\\**1) Drop invalid packets**
 
-
-**1) Drop invalid packets**
 This rule blocks all packets that are not a SYN packet and don’t belong to an established TCP connection.
 ```bash
 iptables -t mangle -A PREROUTING -m conntrack --ctstate INVALID -j DROP
 ```
 
-
-**2) Drop TCP packets that are new and are not SYN**
+\\**2) Drop TCP packets that are new and are not SYN**
 This blocks all packets that are new (don’t belong to an established connection) and don’t use the SYN flag. This rule is similar to the "Block Invalid Packets" one, but we found that it catches some packets that the other one doesn’t.
 ```bash
 iptables -t mangle -A PREROUTING -p tcp ! --syn -m conntrack --ctstate NEW -j DROP 
 ```
-
-
 
 **3) Drop SYN packets with suspicious MSS value**
 The followings rule blocks new packets (only SYN packets can be new packets as per the two previous rules) that use a TCP MSS value that is not common. This helps to block dumb SYN floods.
@@ -126,9 +121,7 @@ The followings rule blocks new packets (only SYN packets can be new packets as p
 iptables -t mangle -A PREROUTING -p tcp -m conntrack --ctstate NEW -m tcpmss ! --mss 536:65535 -j DROP  
 ```
 
-
-
-**4) Block packets with bogus TCP flags**
+\\**4) Block packets with bogus TCP flags**
 The ruleset below blocks packets that use bogus TCP flags, ie. TCP flags that legitimate packets wouldn’t use.
 ```bash
 iptables -t mangle -A PREROUTING -p tcp --tcp-flags FIN,SYN,RST,PSH,ACK,URG NONE -j DROP 
@@ -146,9 +139,7 @@ iptables -t mangle -A PREROUTING -p tcp --tcp-flags ALL SYN,FIN,PSH,URG -j DROP
 iptables -t mangle -A PREROUTING -p tcp --tcp-flags ALL SYN,RST,ACK,FIN,URG -j DROP   
 ```
 
-
-
-**5) Drop packets from private subnets (Spoofing)**
+\\**5) Drop packets from private subnets (Spoofing)**
 These rules block spoofed packets originating from private (local) subnets. On your public network interface you usually don’t want to receive packets from private source IPs.These rules assume that your loopback interface uses the 127.0.0.0/8 IP space.
 These five sets of rules alone already block many TCP-based DDoS attacks at very high packet rates. With the kernel settings and rules mentioned above, you’ll be able to filter ACK and SYN-ACK attacks at line rate.
 ```bash
@@ -163,50 +154,39 @@ iptables -t mangle -A PREROUTING -s 240.0.0.0/5 -j DROP
 iptables -t mangle -A PREROUTING -s 127.0.0.0/8 ! -i lo -j DROP  
 ```
 
-
-
-**6)  Drop ICMP (you usually don't need this protocol)**
+\\**6)  Drop ICMP (you usually don't need this protocol)**
 This rule drops all ICMP packets. ICMP is only used to ping a host to find out if it’s still alive. Because it’s usually not needed and only represents another vulnerability that attackers can exploit, we block all ICMP packets to mitigate Ping of Death (ping flood), ICMP flood and ICMP fragmentation flood.
 ```bash
 iptables -t mangle -A PREROUTING -p icmp -j DROP  
 ```
 
-
-
-**7) Drop fragments in all chains**
+\\**7) Drop fragments in all chains**
 This rule blocks fragmented packets. Normally you don’t need those and blocking fragments will mitigate UDP fragmentation flood. But most of the time UDP fragmentation floods use a high amount of bandwidth that is likely to exhaust the capacity of your network card, which makes this rule optional and probably not the most useful one.
 ```bash
 iptables -t mangle -A PREROUTING -f -j DROP
 ```
 
-
-
-**8) Limit connections per source IP**
+\\**8) Limit connections per source IP**
 This rule blocks simply limits the number of connections a single IP can have with your server.
 ```bash
 iptables -A INPUT -p tcp -m connlimit --connlimit-above 111 -j REJECT --reject-with tcp-reset  
 ```
 
-
-
-**9) Limit connections per source IP**
+\\**9) Limit connections per source IP**
 This limits incoming TCP RST packets to mitigate TCP RST floods. Effectiveness of this rule is questionable.
 ```bash
 iptables -A INPUT -p tcp --tcp-flags RST RST -m limit --limit 2/s --limit-burst 2 -j ACCEPT 
 iptables -A INPUT -p tcp --tcp-flags RST RST -j DROP
 ```
 
-
-**10) Limit new TCP connections per second per source IP**
+\\**10) Limit new TCP connections per second per source IP**
 Limits the new TCP connections that a client can establish per second. This can be useful against connection attacks, but not so much against SYN floods because the usually use an endless amount of different spoofed source IPs.
 ```bash
 iptables -A INPUT -p tcp -m conntrack --ctstate NEW -m limit --limit 60/s --limit-burst 20 -j ACCEPT 
 iptables -A INPUT -p tcp -m conntrack --ctstate NEW -j DROP  
 ```
 
-
-
-**11) Protection against port scanning**
+\\**11) Protection against port scanning**
 Stops snoops from checking which ports are running and what services are running on your server.
 ```bash
 iptables -N port-scanning 
