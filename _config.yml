@@ -13,3 +13,5 @@ exclude: ["README.md", "README.html"]
 highlighter: null
 markdown: kramdown
 permalink: pretty
+plugins:
+  - jekyll-loading-lazy
