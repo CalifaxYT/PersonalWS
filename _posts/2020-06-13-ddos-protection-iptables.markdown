@@ -101,7 +101,7 @@ These kernel tweaks help to maximize the performance of your server under DDoS a
 **The Actual IPTables Anti-DDoS Rules**
 
 DDoS attacks are complex. There are many different types of them and it’s close to impossible to maintain signature-based rules against all. But luckily there is something called connection tracking (nf_conntrack kernel module), which can help us to mitigate almost any TCP-based DDoS attack that doesn’t use SYN packets that seem legitimate - this includes all types of ACK, SYN-ACK and bogus TCP flag DDoS attacks. Anyways, here are the rules.
-<br/><br/>
+
 **1) Drop invalid packets**
 <br/>
 This rule blocks all packets that are not a SYN packet and don’t belong to an established TCP connection.
