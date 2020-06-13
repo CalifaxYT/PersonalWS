@@ -13,7 +13,7 @@ My skills include:
 * Python (development)
 * C# (development and secure code review)
 * Java (development and secure code review)
-* MySQL - MongoDB
+* MySQL - MariaDB & MySQL
 * Git (somewhat)
 * Networking
 * Box hardening (mainly *nix)
