@@ -17,3 +17,4 @@ plugins:
   - jekyll-loading-lazy
   - jekyll-email-protect
   - jekyll-seo-tag
+  - jekyll-gist
