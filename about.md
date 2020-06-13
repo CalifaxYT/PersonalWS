@@ -5,8 +5,17 @@ subtitle: Just who the hell you think I am?
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+I am a 19 year old system administrator and developer based in Bulgaria. I have a particularly strong background of the above-mentioned two, but also have (limited) skills in customer support. I have worked for multiple companies both as customer support and a system administrator.
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+My skills include:
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+* PHP (development and secure code review)
+* Python (development)
+* C# (development and secure code review)
+* Java (development and secure code review)
+* MySQL - MongoDB
+* Git (somewhat)
+* Networking
+* Box hardening (mainly *nix)
+* Server administration
+* Database administration
