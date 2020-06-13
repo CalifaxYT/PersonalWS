@@ -207,6 +207,7 @@ iptables -A port-scanning -p tcp --tcp-flags SYN,ACK,FIN,RST RST -m limit --limi
 iptables -A port-scanning -j DROP 
 ```
 
+**The Complete IPTables Anti-DDoS Rules**
 ```bash
 ### 1: Drop invalid packets ### 
 iptables -t mangle -A PREROUTING -m conntrack --ctstate INVALID -j DROP  
