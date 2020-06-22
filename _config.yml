@@ -18,4 +18,3 @@ plugins:
   - jekyll-email-protect
   - jekyll-seo-tag
   - jekyll-gist
-  - jekyll-time-to-read
