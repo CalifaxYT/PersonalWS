@@ -267,7 +267,7 @@ iptables -A port-scanning -p tcp --tcp-flags SYN,ACK,FIN,RST RST -m limit --limi
 iptables -A port-scanning -j DROP
 ```
 
-[CalifaxYT Discord](https://discord.gg/WufbYbv)
+[CalifaxYT Discord](https://discord.gg/WufbYbv "Discord Invite URL")
 
 ---
 
