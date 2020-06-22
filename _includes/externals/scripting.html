@@ -1,3 +1,40 @@
 <script src="{{ "/assets/vendor/highlight/highlight.pack.js" | prepend: site.baseurl }}"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <script>document.addEventListener("DOMContentLoaded",function(){var e=document.querySelectorAll("a.dmca-badge");if(e[0].getAttribute("href").indexOf("refurl")<0)for(var r=0;r<e.length;r++){var t=e[r];t.href=t.href+(-1===t.href.indexOf("?")?"?":"&")+"refurl="+document.location}},!1);</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.addEventListener('load', function(){
+  window.cookieconsent.initialise({
+   revokeBtn: "<div class='cc-revoke'></div>",
+   type: "opt-in",
+   position: "bottom-right",
+   theme: "classic",
+   palette: {
+       popup: {
+           background: "#282828",
+           text: "#ffffff"
+        },
+       button: {
+           background: "#323232",
+           text: "#ffffff"
+        }
+    },
+   content: {
+       message: "We and selected partners, use cookies, IP addresses and/or similar technologies as specified in the cookie and privacy policy to ensure you get the best experience on our website.",
+       link: "Learn More",
+       href: "https://califax.host/privacy"
+    },
+    onInitialise: function(status) {
+      if(status == cookieconsent.status.allow) blockableScripts();
+    },
+    onStatusChange: function(status) {
+      if (this.hasConsented()) blockableScripts();
+    }
+  })
+});
+
+function blockableScripts() {
+// When the site grows a bit bigger, scripts might appear here. For now this does nothing.
+}
+</script>
