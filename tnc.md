@@ -4,12 +4,6 @@ title: Terms and conditions
 subtitle: Last updated June 21, 2020
 permalink: /tnc/
 ---
----
-layout: page
-title: Terms and conditions
-subtitle: Last updated June 21, 2020
-permalink: /tnc/
---- 
 
 By accessing this website we assume you accept these terms and conditions in full. Do not continue to use CalifaxYT's website if you do not accept all of the terms and conditions stated on this page.
 
