@@ -171,17 +171,7 @@ We may update this privacy notice from time to time. The updated version will be
 
 **11\. HOW CAN YOU CONTACT US ABOUT THIS POLICY?**
 
-If you have questions or comments about this policy, you may email us at trayanovboris@gmail.com or by post to:
-
-CalifaxYT 
-
-N/A
-
-Sofia 1000
-
-Bulgaria
-
-  
+If you have questions or comments about this policy, you may email us at trayanovboris@gmail.com.
 
 **HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?**
 
