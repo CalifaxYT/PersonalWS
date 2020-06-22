@@ -3,6 +3,7 @@ layout: post
 title:  "DDoS Protection With IPtables"
 subtitle: "The Ultimate IPtables Guide"
 date:   2020-06-13 13:33:37
+tags: [ptable,netfilter,iptables 开放端口,iptable,linux iptables,ddos attack,anti ddos,ddoss,linux tutorial]
 categories: [tweaks]
 ---
 
