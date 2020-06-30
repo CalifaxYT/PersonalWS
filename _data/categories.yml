@@ -1,6 +1,9 @@
 - slug: tweaks
   name: Tweaks
 
+- slug: scripts
+  name: Scripts
+
 - slug: misc
   name: Misc
 
