@@ -40,7 +40,7 @@ This codeblock shows an example app banner. This can be freely changed to anythi
 ```
 
 This codeblock shows the script itself. If you do not have any  BATCH  knowledge you should
-only edit the configurable variables between  ``REM ## START OF CONFIGURABLE VARIABLES``  and  ``REM ## END OF CONFIGURABLE VARIABLES`` . Otherwise, you are free to edit and
+only edit the configurable variables between  'REM ## START OF CONFIGURABLE VARIABLES'  and  'REM ## END OF CONFIGURABLE VARIABLES' . Otherwise, you are free to edit and
 redistribute my work, but only under the Mozilla Public License.
 ```batch
 @echo off
@@ -176,7 +176,7 @@ This codeblock shows an example app banner. This can be freely changed to anythi
 ```
 
 This codeblock shows the script itself. If you do not have any BATCH knowledge you should
-only edit the configurable variables between  ``REM ## START OF CONFIGURABLE VARIABLES``  and  ``REM ## END OF CONFIGURABLE VARIABLES``. Otherwise, you are free to edit and
+only edit the configurable variables between  'REM ## START OF CONFIGURABLE VARIABLES'  and  'REM ## END OF CONFIGURABLE VARIABLES'. Otherwise, you are free to edit and
 redistribute my work, but only under the Mozilla Public License.
 ```batch
 @echo off
@@ -263,7 +263,6 @@ GOTO INPUTAWAIT
 
 These scripts will be updated from time to time. Thanks for using them.
 <br/>
-```
 
 [CalifaxYT Discord](https://discord.gg/WufbYbv "Discord Invite URL")
 
