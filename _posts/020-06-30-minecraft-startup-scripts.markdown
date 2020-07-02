@@ -15,7 +15,7 @@ often makes them pretty resource-heavy. This is why this server startup solution
 
 **The MC:Java Edition Startup Script**
 
-This edition of the script allows server owners to start  **ANY**  server jarfile. It can also auto-update (and redownload) the latest PaperSpigot build for the version chosen.
+This edition of the script allows server owners to start ANY server jarfile. It can also auto-update (and redownload) the latest PaperSpigot build for the version chosen.
 The list of available commands is:
 
 * /launch - start the server
@@ -152,7 +152,7 @@ GOTO INPUTAWAIT
 
 **The MC:Bedrock Edition Startup Script**
 
-This edition of the script allows server owners to start  **ANY**  server .exe. It *CAN NOT* auto-update (and redownload) the latest server build.
+This edition of the script allows server owners to start ANY server .exe. It *CAN NOT* auto-update (and redownload) the latest server build.
 The list of available commands is:
 
 /launch - start the server
