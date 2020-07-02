@@ -40,7 +40,7 @@ This codeblock shows an example app banner. This can be freely changed to anythi
 ```
 
 This codeblock shows the script itself. If you do not have any  [BATCH](https://en.wikipedia.org/wiki/Batch_file "Batch file on Wikipedia")  knowledge you should
-only edit the configurable variables between ``REM ## START OF CONFIGURABLE VARIABLES`` and ``REM ## END OF CONFIGURABLE VARIABLES``. Otherwise, yo uare free to edit and
+only edit the configurable variables between  ``REM ## START OF CONFIGURABLE VARIABLES``  and  ``REM ## END OF CONFIGURABLE VARIABLES`` . Otherwise, yo uare free to edit and
 redistribute my work, but only under the  [Mozilla Public License](https://en.wikipedia.org/wiki/Mozilla_Public_License "Mozilla Public License on Wikipedia").
 ```batch
 @echo off
@@ -152,7 +152,7 @@ GOTO INPUTAWAIT
 
 **The MC:Bedrock Edition Startup Script**
 
-This edition of the script allows server owners to start **ANY** server .exe. It *CAN NOT* auto-update (and redownload) the latest server build.
+This edition of the script allows server owners to start  **ANY**  server .exe. It *CAN NOT* auto-update (and redownload) the latest server build.
 The list of available commands is:
 
 /launch - start the server
@@ -165,7 +165,7 @@ The list of available commands is:
 And now - onto the scipt:
 
 This codeblock shows an example app banner. This can be freely changed to anything you like.
-```cfg
+```markdown
 #Example banner.cfg
     __  __________       __                                    ______            _          
    /  |/  / ____/ |     / /________ _____  ____  ___  _____   / ____/___  ____ _(_)___  ___ 
@@ -175,9 +175,9 @@ This codeblock shows an example app banner. This can be freely changed to anythi
                                  /_/   /_/                             /____/               
 ```
 
-This codeblock shows the script itself. If you do not have any [BATCH](https://en.wikipedia.org/wiki/Batch_file "Batch file on Wikipedia") knowledge you should
-only edit the configurable variables between ``REM ## START OF CONFIGURABLE VARIABLES`` and ``REM ## END OF CONFIGURABLE VARIABLES``. Otherwise, yo uare free to edit and
-redistribute my work, but only under the [Mozilla Public License](https://en.wikipedia.org/wiki/Mozilla_Public_License "Mozilla Public License on Wikipedia").
+This codeblock shows the script itself. If you do not have any  [BATCH](https://en.wikipedia.org/wiki/Batch_file "Batch file on Wikipedia")  knowledge you should
+only edit the configurable variables between  ``REM ## START OF CONFIGURABLE VARIABLES``  and  ``REM ## END OF CONFIGURABLE VARIABLES``. Otherwise, yo uare free to edit and
+redistribute my work, but only under the  [Mozilla Public License](https://en.wikipedia.org/wiki/Mozilla_Public_License "Mozilla Public License on Wikipedia").
 ```batch
 @echo off
 REM ## START OF CONFIGURABLE VARIABLES - DO NOT LEAVE ANY OF THEM EMPTY
