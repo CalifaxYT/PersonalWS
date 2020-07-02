@@ -8,28 +8,28 @@ categories: [scripts]
 ---
 
 There are many subpar startup scripts on the market. Most of them have only a MineCraft Java edition support. What is more, languages like C# and Java are used, which
-often makes them pretty resource-heavy. This is why this server startup solution is written in BATCH - the scripting language of [CMD](https://en.wikipedia.org/wiki/Cmd.exe "CMD on Wikipedia").
+often makes them pretty resource-heavy. This is why this server startup solution is written in BATCH - the scripting language of  [CMD](https://en.wikipedia.org/wiki/Cmd.exe "CMD on Wikipedia").
 
 **NOTE:** This script works ONLY on Windows OS and has been tested (and developed) on Windows 10.
 
 
 **The MC:Java Edition Startup Script**
 
-This edition of the script allows server owners to start **ANY** server jarfile. It can also auto-update (and redownload) the latest PaperSpigot build for the version chosen.
+This edition of the script allows server owners to start  **ANY**  server jarfile. It can also auto-update (and redownload) the latest PaperSpigot build for the version chosen.
 The list of available commands is:
 
-/launch - start the server
-/jarupdate - update or download the server jarfile
-/exit - gracefully shut the script down
-/logclean or /logclear or /clearlogs - clear the logs
-/clear - clear the console window
-/credits - info about the script author
-/help - shows a list of these commands
+* /launch - start the server
+* /jarupdate - update or download the server jarfile
+* /exit - gracefully shut the script down
+* /logclean or /logclear or /clearlogs - clear the logs
+* /clear - clear the console window
+* /credits - info about the script author
+* /help - shows a list of these commands
 
 And now - onto the scipt:
 
 This codeblock shows an example app banner. This can be freely changed to anything you like.
-```cfg
+```markdown
 #Example banner.cfg
     __  __________       __                                    ______            _          
    /  |/  / ____/ |     / /________ _____  ____  ___  _____   / ____/___  ____ _(_)___  ___ 
@@ -39,9 +39,9 @@ This codeblock shows an example app banner. This can be freely changed to anythi
                                  /_/   /_/                             /____/               
 ```
 
-This codeblock shows the script itself. If you do not have any [BATCH](https://en.wikipedia.org/wiki/Batch_file "Batch file on Wikipedia") knowledge you should
+This codeblock shows the script itself. If you do not have any  [BATCH](https://en.wikipedia.org/wiki/Batch_file "Batch file on Wikipedia")  knowledge you should
 only edit the configurable variables between ``REM ## START OF CONFIGURABLE VARIABLES`` and ``REM ## END OF CONFIGURABLE VARIABLES``. Otherwise, yo uare free to edit and
-redistribute my work, but only under the [Mozilla Public License](https://en.wikipedia.org/wiki/Mozilla_Public_License "Mozilla Public License on Wikipedia").
+redistribute my work, but only under the  [Mozilla Public License](https://en.wikipedia.org/wiki/Mozilla_Public_License "Mozilla Public License on Wikipedia").
 ```batch
 @echo off
 REM ## START OF CONFIGURABLE VARIABLES - DO NOT LEAVE ANY OF THEM EMPTY
