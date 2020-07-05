@@ -21,7 +21,7 @@ Note that this guide focuses on CentOS 7 & Debian 9/10 as the operating systems 
 
 We won’t cover every single kernel setting that you need to adjust in order to better mitigate DDoS with IPTables.
 
-Instead, we provide a set of CentOS 7 (they work for Debian 9 and 10 too) kernel settings that we would use. Just put the below in your ``/etc/sysctl.conf`` file and apply the settings with ``sysctl -p``.
+Instead, we provide a set of CentOS 7 (they work for Debian 9 and 10 too) kernel settings that we would use. Just put the below in your /etc/sysctl.conf file and apply the settings with sysctl -p.
 
 ```conf
 kernel.printk = 4 4 1 7 
